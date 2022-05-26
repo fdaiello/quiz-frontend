@@ -8,14 +8,14 @@ import { ApiService } from '../api.service';
 })
 export class QuestionComponent implements OnInit {
 
-  question: string = "";
+  question = {text:''};
   
   constructor( private api : ApiService) { }
 
   ngOnInit(): void {
   }
 
-  post(question: string){
+  post(question:any){
     this.api.postQuestion(question);
   }
 }
