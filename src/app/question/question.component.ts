@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Question } from '../_models/question';
+import { Question } from '../models/question';
 
 @Component({
   selector: 'app-question',
@@ -9,14 +9,14 @@ import { Question } from '../_models/question';
 })
 export class QuestionComponent implements OnInit {
 
-   question: Question = {} as Question;
+   question: Question = new Question();
   
   constructor( private api : ApiService) { }
 
   ngOnInit(): void {
   }
 
-  post(question:any){
+  post(question: Question){
     this.api.postQuestion(question);
   }
 }

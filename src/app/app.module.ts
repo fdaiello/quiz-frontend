@@ -1,5 +1,6 @@
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,13 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input'; 
+import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionComponent
+    QuestionComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatDividerModule,
     MatCardModule,
     MatInputModule,
+    MatListModule,
     FormsModule,
     HttpClientModule
   ],
