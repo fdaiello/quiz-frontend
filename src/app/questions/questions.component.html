@@ -5,7 +5,7 @@
     </mat-card-title>
     <mat-card-content>
         <mat-list role="list">
-            <mat-list-item *ngFor="let question of questions">
+            <mat-list-item *ngFor="let question of questions" (click)="api.selectQuestion(question)" class="questionLink">
                 {{question.text}}
             </mat-list-item>
         </mat-list>

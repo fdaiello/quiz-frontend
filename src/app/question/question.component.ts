@@ -9,14 +9,17 @@ import { Question } from '../models/question';
 })
 export class QuestionComponent implements OnInit {
 
-   question: Question = new Question();
+  question: Question = new Question();
+  question1: Question = new Question();
   
   constructor( private api : ApiService) { }
 
   ngOnInit(): void {
+    this.api.questionSelected.subscribe(question => this.question = question)
   }
 
   post(question: Question){
     this.api.postQuestion(question);
   }
+  
 }

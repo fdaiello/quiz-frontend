@@ -11,8 +11,11 @@ export class QuestionsComponent implements OnInit {
 
   question: Question = new Question();
   questions: Question[] = new Array<Question>();
+  api: ApiService;
     
-  constructor(private api: ApiService) { }
+  constructor(api: ApiService) {
+    this.api = api
+   }
 
   ngOnInit(): void {
     this.api.getQuestions().subscribe(res=>
