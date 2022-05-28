@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { EventsService } from '../event.service';
 import { Question } from '../models/question';
 
 @Component({
@@ -12,14 +13,20 @@ export class QuestionComponent implements OnInit {
   question: Question = new Question();
   question1: Question = new Question();
   
-  constructor( private api : ApiService) { }
+  constructor( private api : ApiService, private event: EventsService) { }
 
   ngOnInit(): void {
-    this.api.questionSelected.subscribe(question => this.question = question)
+    this.event.questionSelected.subscribe(question => {
+      this.question = question;
+    })
   }
 
   post(question: Question){
     this.api.postQuestion(question);
   }
   
+  put(question: Question){
+    this.api.putQuestion(question);
+  }
+
 }

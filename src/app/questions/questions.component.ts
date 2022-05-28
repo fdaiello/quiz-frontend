@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { EventsService } from '../event.service';
 import { Question } from '../models/question';
 
 @Component({
@@ -12,9 +13,11 @@ export class QuestionsComponent implements OnInit {
   question: Question = new Question();
   questions: Question[] = new Array<Question>();
   api: ApiService;
+  event: EventsService;
     
-  constructor(api: ApiService) {
-    this.api = api
+  constructor(api: ApiService, event: EventsService) {
+    this.api = api,
+    this.event = event
    }
 
   ngOnInit(): void {

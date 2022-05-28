@@ -1,4 +1,3 @@
-
 <mat-card>
   <mat-card-title>
     <span *ngIf="question.id">Edit Question</span>
@@ -8,29 +7,29 @@
     <form class="example-form">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Question</mat-label>
-        <input [(ngModel)]="question.text" name="question" matInput placeholder="...write question here ...">
+        <input [(ngModel)]="question.text" name="text" matInput placeholder="...write question here ...">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Correct Answer</mat-label>
-        <input [(ngModel)]="question.correctAnswer" name="question" matInput placeholder="...write correct answer here ...">
+        <input [(ngModel)]="question.correctAnswer" name="correctAnswer" matInput placeholder="...write correct answer here ...">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Answer 1</mat-label>
-        <input [(ngModel)]="question.answer1" name="question" matInput placeholder="wrong answer">
+        <input [(ngModel)]="question.answer1" name="answer1" matInput placeholder="wrong answer">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Answer 2</mat-label>
-        <input [(ngModel)]="question.answer2" name="question" matInput placeholder="wrong answer">
+        <input [(ngModel)]="question.answer2" name="answer2" matInput placeholder="wrong answer">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Answer 3</mat-label>
-        <input [(ngModel)]="question.answer3" name="question" matInput placeholder="wrong answer">
+        <input [(ngModel)]="question.answer3" name="answer3" matInput placeholder="wrong answer">
       </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button *ngIf="!question.id" mat-raised-button (click)="post(question)">POST</button>
+    <button *ngIf="!question.id" mat-raised-button (click)="post(question)">CREATE</button>
     <button *ngIf="question.id" mat-raised-button (click)="question = question1">NEW</button>
-    <button *ngIf="question.id" mat-raised-button (click)="null">EDIT</button>
+    <button *ngIf="question.id" mat-raised-button (click)="put(question)">UPDATE</button>
   </mat-card-actions>
 </mat-card>
