@@ -14,6 +14,7 @@
     <mat-card-actions>
       <button *ngIf="!quiz.id" mat-raised-button (click)="api.postQuiz(quiz)">CREATE</button>
       <button *ngIf="quiz.id" mat-raised-button (click)="quiz = newQuiz">NEW</button>
+      <button *ngIf="quiz.id" mat-raised-button [routerLink]="['/question',quiz.id]">EDIT QUESTIONS</button>
       <button *ngIf="quiz.id" mat-raised-button (click)="api.putQuiz(quiz)">UPDATE</button>
     </mat-card-actions>
-  </mat-card>
+</mat-card>
