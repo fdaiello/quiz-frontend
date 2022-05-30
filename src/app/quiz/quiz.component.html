@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title>
+      <span *ngIf="quiz.id">Edit Quiz</span>
+      <span *ngIf="!quiz.id">New Quiz</span>
+    </mat-card-title>
+    <mat-card-content>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Title</mat-label>
+          <input [(ngModel)]="quiz.title" name="title" matInput placeholder="...write quiz title here ...">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="!quiz.id" mat-raised-button (click)="api.postQuiz(quiz)">CREATE</button>
+      <button *ngIf="quiz.id" mat-raised-button (click)="quiz = newQuiz">NEW</button>
+      <button *ngIf="quiz.id" mat-raised-button (click)="api.putQuiz(quiz)">UPDATE</button>
+    </mat-card-actions>
+  </mat-card>

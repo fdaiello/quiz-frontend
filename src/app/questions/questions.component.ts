@@ -24,6 +24,9 @@ export class QuestionsComponent implements OnInit {
     this.api.getQuestions().subscribe(res=>
       this.questions = res as Question[]
     );
+
+    this.event.questionInserted.subscribe( res => this.questions.push(res as Question))
+
   }
 
 }

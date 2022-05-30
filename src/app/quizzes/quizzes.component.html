@@ -1,11 +1,13 @@
+<app-quiz></app-quiz>
+
 <mat-card>
     <mat-card-title>
-        Questions List
+        Quizzes List
     </mat-card-title>
     <mat-card-content>
         <mat-list role="list">
-            <mat-list-item *ngFor="let question of questions" (click)="event.selectQuestion(question)" class="questionLink">
-                {{question.text}}
+            <mat-list-item *ngFor="let quiz of quizzes" (click)="event.selectQuiz(quiz)" class="quizLink">
+                {{quiz.title}}
             </mat-list-item>
         </mat-list>
     </mat-card-content>

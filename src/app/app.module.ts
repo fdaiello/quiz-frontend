@@ -18,11 +18,15 @@ import { QuestionComponent } from './question/question.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizzesComponent } from './quizzes/quizzes.component';
 
 const routes = [
   { path: '', component: HomeComponent},
   { path: 'question', component: QuestionComponent },
-  { path: 'questions', component: QuestionsComponent}
+  { path: 'questions', component: QuestionsComponent},
+  { path: 'quiz', component: QuizComponent},
+  { path: 'quizzes', component: QuizzesComponent}
 ]
 
 @NgModule({
@@ -31,7 +35,9 @@ const routes = [
     QuestionComponent,
     QuestionsComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    QuizComponent,
+    QuizzesComponent
   ],
   imports: [
     BrowserModule,
