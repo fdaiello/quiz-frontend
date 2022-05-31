@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -27,7 +28,8 @@ const routes = [
   { path: 'question/:quizId', component: QuestionComponent },
   { path: 'questions', component: QuestionsComponent},
   { path: 'quiz', component: QuizComponent},
-  { path: 'quizzes', component: QuizzesComponent}
+  { path: 'quizzes', component: QuizzesComponent},
+  { path: 'register', component: RegisterComponent}
 ]
 
 @NgModule({
@@ -38,7 +40,8 @@ const routes = [
     HomeComponent,
     NavComponent,
     QuizComponent,
-    QuizzesComponent
+    QuizzesComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ const routes = [
     MatInputModule,
     MatListModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule
   ],
