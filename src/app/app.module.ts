@@ -10,7 +10,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input'; 
 import { MatListModule } from '@angular/material/list';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,9 @@ import { NavComponent } from './nav/nav.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { RegisterComponent } from './register/register.component';
+import { ApiService } from './services/api.service';
+import { AuthService } from './services/auth.service';
+import { AuthInterceptor } from './auth.interceptor';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -62,7 +65,11 @@ const routes = [
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [ApiService, AuthService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
