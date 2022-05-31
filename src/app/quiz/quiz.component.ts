@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Quiz } from '../models/quiz';
-import { ApiService } from '../api.service';
-import { EventsService } from '../event.service';
+import { ApiService } from '../services/api.service';
+import { EventsService } from '../services/event.service';
 
 @Component({
   selector: 'app-quiz',

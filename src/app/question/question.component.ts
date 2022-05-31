@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
-import { EventsService } from '../event.service';
+import { ApiService } from '../services/api.service';
+import { EventsService } from '../services/event.service';
 import { Question } from '../models/question';
 import { ActivatedRoute } from '@angular/router';
 

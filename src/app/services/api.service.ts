@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Question } from './models/question';
-import { Quiz } from './models/quiz';
-import { Event } from '@angular/router';
+import { Question } from '../models/question';
+import { Quiz } from '../models/quiz';
 import { EventsService } from './event.service';
 
 @Injectable({
