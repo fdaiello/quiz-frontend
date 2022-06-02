@@ -25,6 +25,7 @@ import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './auth.interceptor';
 import { LoginComponent } from './login/login.component';
+import { PlayComponent } from './play/play.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -47,7 +48,8 @@ const routes = [
     QuizComponent,
     QuizzesComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    PlayComponent
   ],
   imports: [
     BrowserModule,
