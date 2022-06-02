@@ -6,4 +6,6 @@ export class Question {
     answer2!: string;
     answer3!: string;
     quizId!: number;
+    answers!: Array<string>;
+    selectedAnswer!: string
 }

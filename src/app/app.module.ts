@@ -12,6 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
@@ -26,6 +28,7 @@ import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './auth.interceptor';
 import { LoginComponent } from './login/login.component';
 import { PlayComponent } from './play/play.component';
+import { PlayQuizComponent } from './play-quiz/play-quiz.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -35,7 +38,10 @@ const routes = [
   { path: 'quiz', component: QuizComponent},
   { path: 'quizzes', component: QuizzesComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'play', component: PlayComponent},
+  { path: 'playQuiz/:quizId', component: PlayQuizComponent}
+
 ]
 
 @NgModule({
@@ -49,7 +55,8 @@ const routes = [
     QuizzesComponent,
     RegisterComponent,
     LoginComponent,
-    PlayComponent
+    PlayComponent,
+    PlayQuizComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,9 @@ const routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatExpansionModule,
+    MatRadioModule
   ],
   exports: [
     RouterModule
