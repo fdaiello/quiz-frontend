@@ -2,5 +2,7 @@
     <button mat-icon-button routerLink="/" class="navButton">Home</button>
     <button mat-icon-button routerLink="/quiz" class="navButton">Quiz</button>    
     <span style="flex: auto"></span>  
-    <button mat-icon-button routerLink="/register" class="navButton">Register</button>   
+    <button mat-icon-button *ngIf="!authService.isAuthenticated" routerLink="/register" class="navButton">Register</button>   
+    <button mat-icon-button *ngIf="!authService.isAuthenticated" routerLink="/login" class="navButton">Login</button>   
+    <button mat-icon-button *ngIf="authService.isAuthenticated" (click)="authService.logout()" class="navButton">Logout</button>
 </mat-toolbar>
