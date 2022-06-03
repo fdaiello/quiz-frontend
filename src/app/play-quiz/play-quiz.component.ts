@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { Question } from '../models/question';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { FinishedComponent } from '../finished/finished.component';
 
 @Component({
   selector: 'app-play-quiz',
@@ -14,7 +16,7 @@ export class PlayQuizComponent implements OnInit {
   quizId = 0;
   questions = new Array<Question>();
 
-  constructor(private api : ApiService, private route: ActivatedRoute) { }
+  constructor(private api : ApiService, private route: ActivatedRoute, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.quizId = Number(this.route.snapshot.paramMap.get('quizId'));
@@ -40,9 +42,15 @@ export class PlayQuizComponent implements OnInit {
   }
 
   finish(){
-    
+    var correct = 0;
+    this.questions.forEach(q=>{
+      if ( q.selectedAnswer == q.correctAnswer)
+        correct++
+    })
+    let dialogRef = this.dialog.open(FinishedComponent,{
+      data: { correct, total: this.questions.length }
+    });
   }
-
 }
 
 /**

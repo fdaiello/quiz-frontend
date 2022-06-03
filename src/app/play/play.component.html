@@ -4,7 +4,7 @@
     </mat-card-title>
     <mat-card-content>
         <mat-list role="list">
-            <mat-list-item *ngFor="let quiz of quizzes" (click)="event.selectQuiz(quiz)" class="quizLink">
+            <mat-list-item *ngFor="let quiz of quizzes" [routerLink]="['/playQuiz',quiz.id]" class="quizLink">
                 {{quiz.title}}
             </mat-list-item>
         </mat-list>

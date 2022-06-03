@@ -14,6 +14,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
@@ -29,6 +30,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { LoginComponent } from './login/login.component';
 import { PlayComponent } from './play/play.component';
 import { PlayQuizComponent } from './play-quiz/play-quiz.component';
+import { FinishedComponent } from './finished/finished.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -56,7 +58,8 @@ const routes = [
     RegisterComponent,
     LoginComponent,
     PlayComponent,
-    PlayQuizComponent
+    PlayQuizComponent,
+    FinishedComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,8 @@ const routes = [
     HttpClientModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule
   ],
   exports: [
     RouterModule
