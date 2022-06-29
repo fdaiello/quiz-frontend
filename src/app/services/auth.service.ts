@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Credentials } from '../models/credentials';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  private API_URL= environment.API_URL;  
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -18,7 +21,7 @@ export class AuthService {
 
   // Register
   register(credentials:Credentials){
-    return this.http.post<any>('https://localhost:7275/api/account',credentials).subscribe(
+    return this.http.post<any>(`${this.API_URL}/api/account`,credentials).subscribe(
       res => {
         this.authenticate(res)
       }
@@ -27,7 +30,7 @@ export class AuthService {
 
   // Login
   login(credentials:Credentials){
-    return this.http.post<any>('https://localhost:7275/api/account/login',credentials).subscribe(
+    return this.http.post<any>(`${this.API_URL}/api/account/login`,credentials).subscribe(
       res => {
         this.authenticate(res)
       }
